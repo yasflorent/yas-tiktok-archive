@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random Text Selector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Random Text Selector</h1>
+        <button onclick="selectCategory('category1')">Category 1</button>
+        <button onclick="selectCategory('category2')">Category 2</button>
+        <button onclick="selectCategory('category3')">Category 3</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        const texts = {
+            category1: ["Text 1A", "Text 1B", "Text 1C"],
+            category2: ["Text 2A", "Text 2B", "Text 2C"],
+            category3: ["Text 3A", "Text 3B", "Text 3C"]
+        };
+
+        function selectCategory(category) {
+            const items = texts[category];
+            const randomText = items[Math.floor(Math.random() * items.length)];
+            document.getElementById('result').innerText = randomText;
+        }
+    </script>
+</body>
+</html>
